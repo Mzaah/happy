@@ -157,7 +157,25 @@ function createNewsItem(news) {
         <p class="news-summary">${news.summary}</p>
     `;
 
+    // Add click event to redirect to article
+    item.addEventListener('click', function() {
+        redirectToArticle(news);
+    });
+
     return item;
+}
+
+// Redirect to individual article page
+function redirectToArticle(news) {
+    // Create URL-friendly slug from the title
+    const slug = news.title.toLowerCase()
+        .replace(/[^a-z0-9\s]/g, '')
+        .replace(/\s+/g, '-')
+        .substring(0, 50);
+    
+    // Redirect to article page with news data
+    const articleUrl = `article.html?id=${news.id}&slug=${slug}`;
+    window.location.href = articleUrl;
 }
 
 // Update last updated time
