@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HappyPulse - Your Daily Dose of Positive News</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-container">
+                <div class="logo">
+                    <h1>🌟 HappyPulse</h1>
+                </div>
+                <div class="nav-links">
+                    <a href="#top-news">Top Good News</a>
+                    <a href="#categories">Categories</a>
+                    <a href="#about">About</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-container">
+                <h1 class="hero-title">Your Daily Dose of Positive News</h1>
+                <p class="hero-subtitle">Stay informed with uplifting stories, heartwarming news, and inspiring achievements from around the world. Because good news deserves to be shared.</p>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <span class="stat-number">1,000+</span>
+                        <span class="stat-label">Happy Stories</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">50+</span>
+                        <span class="stat-label">Countries Covered</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">Daily</span>
+                        <span class="stat-label">Updates</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Breaking Good News -->
+        <section class="breaking-news">
+            <div class="container">
+                <h2 class="section-title">🚨 Breaking Good News</h2>
+                <div class="breaking-ticker">
+                    <div class="ticker-content">
+                        <span class="ticker-item">🎉 Scientists discover new coral reef recovery method that's 90% effective!</span>
+                        <span class="ticker-item">🌱 Community garden project feeds 500 families and brings neighbors together</span>
+                        <span class="ticker-item">🏥 New medical breakthrough helps paralyzed patients walk again</span>
+                        <span class="ticker-item">🎓 Free coding bootcamp graduates 200 students with 95% job placement rate</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Top Good News -->
+        <section id="top-news" class="top-news">
+            <div class="container">
+                <h2 class="section-title">Today's Top Good News</h2>
+                <div class="news-grid" id="newsGrid">
+                    <!-- News articles will be loaded here by JavaScript -->
+                </div>
+                <button class="load-more-btn" onclick="loadMoreNews()">Load More Good News</button>
+            </div>
+        </section>
+
+        <!-- Categories -->
+        <section id="categories" class="categories">
+            <div class="container">
+                <h2 class="section-title">Good News Categories</h2>
+                <div class="category-grid">
+                    <div class="category-card" onclick="filterNews('science')">
+                        <div class="category-icon">🔬</div>
+                        <h3>Science & Discovery</h3>
+                        <p>Amazing breakthroughs and discoveries</p>
+                    </div>
+                    <div class="category-card" onclick="filterNews('environment')">
+                        <div class="category-icon">🌍</div>
+                        <h3>Environment</h3>
+                        <p>Positive environmental progress</p>
+                    </div>
+                    <div class="category-card" onclick="filterNews('health')">
+                        <div class="category-icon">🏥</div>
+                        <h3>Health & Medicine</h3>
+                        <p>Medical advances and wellness</p>
+                    </div>
+                    <div class="category-card" onclick="filterNews('community')">
+                        <div class="category-icon">🤝</div>
+                        <h3>Community</h3>
+                        <p>Heartwarming community stories</p>
+                    </div>
+                    <div class="category-card" onclick="filterNews('technology')">
+                        <div class="category-icon">💡</div>
+                        <h3>Technology</h3>
+                        <p>Tech innovations helping humanity</p>
+                    </div>
+                    <div class="category-card" onclick="filterNews('education')">
+                        <div class="category-icon">📚</div>
+                        <h3>Education</h3>
+                        <p>Learning and growth stories</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Mood Tracker -->
+        <section class="mood-section">
+            <div class="container">
+                <h2 class="section-title">How's Your Day?</h2>
+                <p>Let us know how these positive stories make you feel!</p>
+                <div class="mood-tracker">
+                    <button class="mood-btn" onclick="trackMood('amazing')">🤩 Amazing</button>
+                    <button class="mood-btn" onclick="trackMood('happy')">😊 Happy</button>
+                    <button class="mood-btn" onclick="trackMood('hopeful')">🌟 Hopeful</button>
+                    <button class="mood-btn" onclick="trackMood('inspired')">✨ Inspired</button>
+                </div>
+                <div id="moodResult" class="mood-result"></div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer id="about" class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>🌟 HappyPulse</h3>
+                    <p>Spreading positivity one story at a time. We believe that good news deserves as much attention as everything else.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Categories</h4>
+                    <ul>
+                        <li><a href="#" onclick="filterNews('science')">Science & Discovery</a></li>
+                        <li><a href="#" onclick="filterNews('environment')">Environment</a></li>
+                        <li><a href="#" onclick="filterNews('health')">Health & Medicine</a></li>
+                        <li><a href="#" onclick="filterNews('community')">Community</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>About</h4>
+                    <p>HappyPulse is dedicated to sharing positive, uplifting news that inspires hope and celebrates human achievement.</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 HappyPulse. Made with ❤️ for spreading positivity.</p>
+                <p class="disclaimer">All news stories are curated for their positive impact and accuracy. This is not a news aggregation service but a platform for sharing good news.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
